@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
     public findMarker2 = false;
     public findLine = false;
     public findPolygone = false;
+    public zooms = 14;
 
     public maping = [
         [50.445036, 30.485600],
@@ -73,13 +74,19 @@ export class AppComponent implements OnInit {
     public rtis6 = [];
 
     ngOnInit() {
-        this.map = L.map('map').setView([50.445036, 30.485600], 13);
+        this.map = L.map('map', {
+            center:[50.445036, 30.485600],
+            zoom: 14,
+            worldCopyJump: true,
+            watch: true
+        });
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(this.map);
-
+            attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        })
+            .addTo(this.map);
         L.control.scale().addTo(this.map);
-
     }
 
     addLine() {
@@ -92,6 +99,7 @@ export class AppComponent implements OnInit {
                     weight: 5,
                     opacity: 0.6
                 })
+                    .bindPopup('Line works')
                     .addTo(this.group5);
                 this.map.addLayer(this.group5);
                 this.rtis5.push(this.qwerty5);
