@@ -1,7 +1,21 @@
+// DontTuch
 import {Component, OnInit} from '@angular/core';
 import * as L from 'leaflet';
-import {antPath} from 'leaflet-ant-path';
 import 'leaflet-ellipse';
+import 'leaflet-lasso';
+
+const options: LassoHandlerOptions = {
+  polygon: {
+    color: '#67e30f',
+    weight: 2,
+  },
+  intersect: true,
+};
+
+interface LassoHandlerOptions {
+  polygon?: L.PolylineOptions,
+  intersect?: boolean;
+}
 
 @Component({
   selector: 'my-app',
@@ -18,7 +32,6 @@ export class AppComponent implements OnInit {
   public findMarker2 = false;
   public findLine = false;
   public findPolygone = false;
-  public zooms = 14;
 
   public maping = [
     [50.445036, 30.485600],
@@ -72,6 +85,10 @@ export class AppComponent implements OnInit {
   public rtis5 = [];
   public rtis6 = [];
 
+  public marks = [];
+
+  public mapEvent;
+
   ngOnInit() {
     this.map = L.map('map', {
       center: [50.445036, 30.485600],
@@ -86,7 +103,26 @@ export class AppComponent implements OnInit {
     })
       .addTo(this.map);
     L.control.scale().addTo(this.map);
+
+    const lasso = L.lasso(this.map, options);
+
+
+    type LassoControlOptions = LassoHandlerOptions & L.ControlOptions;
+
+    L.control.lasso(options).addTo(this.map);
+
+    interface LassoHandlerFinishedEventData {
+      latLngs: L.LatLng[];
+      layers: L.Layer[];
+    }
+
+    this.map.on('lasso.finished', (event: LassoHandlerFinishedEventData) => {
+      console.log(event.layers);
+    });
+
+    this.addMarker();
   }
+
 
   addLine() {
     if (this.findLine === false) {
@@ -235,6 +271,5 @@ export class AppComponent implements OnInit {
     }
 
   }
-
 
 }

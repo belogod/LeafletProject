@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
 
 import {icon, Marker} from 'leaflet';
 const iconUrl = 'assets/leaflet/marker-icon-2x.png';
@@ -15,11 +16,10 @@ const iconDefault = icon({
 });
 Marker.prototype.options.icon = iconDefault;
 
-import { AppComponent } from './app.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent],
+  declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

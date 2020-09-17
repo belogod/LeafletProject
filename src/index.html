@@ -1,6 +1,33 @@
 <html>
   <head>
     <title>Angular App</title>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/leaflet-lasso@2.2.1/dist/leaflet-lasso.umd.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+      #github-corner {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      #map {
+        width: 640px;
+        height: 320px;
+        float: left;
+      }
+      #sidebar {
+        margin-left: 650px;
+      }
+      .selected {
+        filter: hue-rotate(135deg);
+      }
+    </style>
   </head>
   <body>
   <my-app></my-app>
