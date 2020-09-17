@@ -1,4 +1,3 @@
-// DontTuch
 import {Component, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 import 'leaflet-ellipse';
@@ -116,12 +115,58 @@ export class AppComponent implements OnInit {
       layers: L.Layer[];
     }
 
-    this.map.on('lasso.finished', (event: LassoHandlerFinishedEventData) => {
-      console.log(event.layers);
+    this.map.on('lasso.finished', event => {
+      this.setSelectedLayers(event.layers);
+      console.log(event)
+      console.log(event.layers)
     });
+
 
     this.addMarker();
   }
+
+  setSelectedLayers(layers) {
+    this.resetSelectedState();
+
+    layers.forEach(layer => {
+      if (layer instanceof L.Marker) {
+        layer.setIcon(new L.Icon.Default({ className: 'selected '}));
+        console.log(layer)
+      } else if (layer instanceof L.Path) {
+        layer.setStyle({ color: '#ff4620' });
+      }
+    });
+    console.log('zxc', layers)
+    // lassoResult.innerHTML = layers.length ? `Selected ${layers.length} layers` : '';
+  }
+
+
+  resetSelectedState() {
+    this.map.eachLayer(layer => {
+      if (layer instanceof L.Marker) {
+        layer.setIcon(new L.Icon.Default());
+      } else if (layer instanceof L.Path) {
+        layer.setStyle({ color: '#3388ff' });
+      }
+    });
+
+    // lassoResult.innerHTML = '';
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   addLine() {
