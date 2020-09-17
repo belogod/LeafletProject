@@ -35,7 +35,22 @@ export class AppComponent implements OnInit {
   public maping = [
     [50.445036, 30.485600],
     [50.441005, 30.482981],
-    [50.442990, 30.491796]
+    [50.442990, 30.491796],
+    [50.443990, 30.491896],
+    [50.444990, 30.492096],
+    [50.445990, 30.492196],
+    [50.446990, 30.492796],
+    [50.447990, 30.493896],
+    [50.443190, 30.494996],
+    [50.443290, 30.493296],
+    [50.444490, 30.494396],
+    [50.443490, 30.494896],
+    [50.443590, 30.495496],
+    [50.443690, 30.499196],
+    [50.443790, 30.498696],
+    [50.443890, 30.498496],
+    [50.444290, 30.493496],
+    [50.443090, 30.490296],
   ];
   public maping2 = [
     [50.455036, 30.495600],
@@ -77,6 +92,8 @@ export class AppComponent implements OnInit {
   public group5;
   public group6;
 
+  public latit = [];
+
   public rtis = [];
   public rtis2 = [];
   public rtis3 = [];
@@ -91,7 +108,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.map = L.map('map', {
       center: [50.445036, 30.485600],
-      zoom: 14,
+      zoom: 16,
       worldCopyJump: true,
       watch: true
     });
@@ -117,9 +134,18 @@ export class AppComponent implements OnInit {
 
     this.map.on('lasso.finished', event => {
       this.setSelectedLayers(event.layers);
-      console.log(event)
-      console.log(event.layers)
+      console.log('tttt', event.layers);
+      for (let i = 0; i < event.layers.length; i++) {
+        const fghj = event.layers[i];
+        this.latit.push(Object.values(fghj._latlng));
+        console.log('pppppooooeee', fghj._latlng);
+        console.log('latit', this.latit);
+
+      }
+      console.log('this', this);
+      // console.log('layers', event.layers.toString)
     });
+
 
 
     this.addMarker();
@@ -131,13 +157,15 @@ export class AppComponent implements OnInit {
     layers.forEach(layer => {
       if (layer instanceof L.Marker) {
         layer.setIcon(new L.Icon.Default({ className: 'selected '}));
-        console.log(layer)
+        // console.log(layer);
+        // console.log('latlng', L.lasso);
       } else if (layer instanceof L.Path) {
         layer.setStyle({ color: '#ff4620' });
+        layer.getAll();
+
+
       }
     });
-    console.log('zxc', layers)
-    // lassoResult.innerHTML = layers.length ? `Selected ${layers.length} layers` : '';
   }
 
 
@@ -281,11 +309,11 @@ export class AppComponent implements OnInit {
   }
 
   addMarker() {
-    this.addMarker3('QQQQQQQQQ', this.maping, this.info3, this.rtis3, this.group3, this.qwerty3, this.findMarker)
+    this.addMarker3('Test', this.maping, this.info3, this.rtis3, this.group3, this.qwerty3, this.findMarker)
   }
 
   addMarker2() {
-    this.addMarker3('qwerty', this.maping2, this.info4, this.rtis4, this.group4, this.qwerty4, this.findMarker2)
+    this.addMarker3('Testing', this.maping2, this.info4, this.rtis4, this.group4, this.qwerty4, this.findMarker2)
   }
 
   addMarker3(xx, zzz, ccc, vvv, bbb, nnn, qqq) {
