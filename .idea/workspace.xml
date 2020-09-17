@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9d56591-cbe8-4477-bfc9-14411d24a7cb" name="Default Changelist" comment="" />
+    <list default="true" id="d9d56591-cbe8-4477-bfc9-14411d24a7cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +20,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1hAiSEAj17ACn5FV6u1TqX4gJ1b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,12 +31,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devtest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Работа\Проекты\leaflet-map\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -76,6 +85,7 @@
       <workItem from="1599826928637" duration="3342000" />
       <workItem from="1600059678860" duration="301000" />
       <workItem from="1600060749700" duration="13007000" />
+      <workItem from="1600322292307" duration="2775000" />
     </task>
     <servers />
   </component>
@@ -92,26 +102,26 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599486825589" />
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599833064966" />
-    <state width="1896" height="281" key="GridCell.Tab.0.bottom" timestamp="1599583476845">
+    <state width="936" height="280" key="GridCell.Tab.0.bottom" timestamp="1600323627844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599460489094" />
-    <state width="1896" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599583476845" />
-    <state width="1896" height="281" key="GridCell.Tab.0.center" timestamp="1599583476845">
+    <state width="936" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600323627844" />
+    <state width="936" height="280" key="GridCell.Tab.0.center" timestamp="1600323627844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599460489094" />
-    <state width="1896" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599583476845" />
-    <state width="1896" height="281" key="GridCell.Tab.0.left" timestamp="1599583476845">
+    <state width="936" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600323627844" />
+    <state width="936" height="280" key="GridCell.Tab.0.left" timestamp="1600323627844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599460489093" />
-    <state width="1896" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599583476845" />
-    <state width="1896" height="281" key="GridCell.Tab.0.right" timestamp="1599583476845">
+    <state width="936" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600323627844" />
+    <state width="936" height="280" key="GridCell.Tab.0.right" timestamp="1600323627844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599460489094" />
-    <state width="1896" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599583476845" />
+    <state width="936" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600323627844" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1599722575147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

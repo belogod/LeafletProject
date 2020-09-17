@@ -1,14 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 import {antPath} from 'leaflet-ant-path';
-
+import 'leaflet-ellipse';
 
 @Component({
     selector: 'my-app',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
 })
-
 
 export class AppComponent implements OnInit {
     public map: any;
@@ -87,6 +86,8 @@ export class AppComponent implements OnInit {
         })
             .addTo(this.map);
         L.control.scale().addTo(this.map);
+
+        this.findMaping();
     }
 
     addLine() {
@@ -145,13 +146,16 @@ export class AppComponent implements OnInit {
             for (let i = 0; i < this.maping.length; i++) {
                 this.info = this.maping[i];
                 this.group1 = L.featureGroup();
-                this.qwerty1 = L.circle(this.info, {
-                    stroke: false,
-                    fillColor: '#0750cd',
-                    fillOpacity: 0.25,
-                    radius: 200,
-                    fillRule: 'Hello'
-                }).addTo(this.group1);
+                this.qwerty1 = L.ellipse(
+                    this.info,
+                    [300, 100],
+                    180,
+                    {
+                        color: 'blue',
+                        fillColor: 'red',
+                        fillOpacity: 0.15
+                    })
+                    .addTo(this.group1);
                 this.map.addLayer(this.group1);
 
                 this.rtis.push(this.qwerty1)
@@ -229,5 +233,6 @@ export class AppComponent implements OnInit {
         }
 
     }
+
 
 }
