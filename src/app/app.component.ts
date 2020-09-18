@@ -25,14 +25,14 @@ interface LassoHandlerOptions {
 export class AppComponent implements OnInit {
   public map: any;
 
-  public findMap = false;
-  public findMap2 = false;
-  public findMarker = false;
-  public findMarker2 = false;
-  public findLine = false;
-  public findPolygone = false;
+  public checkEllipse = false;
+  public checkCircle = false;
+  public checkMarker = false;
+  public checkMarker2 = false;
+  public checkLine = false;
+  public checkPolygone = false;
 
-  public maping = [
+  public coordEllipse = [
     [50.445036, 30.485600],
     [50.441005, 30.482981],
     [50.442990, 30.491796],
@@ -52,12 +52,12 @@ export class AppComponent implements OnInit {
     [50.444290, 30.493496],
     [50.443090, 30.490296],
   ];
-  public maping2 = [
+  public coordCircle = [
     [50.455036, 30.495600],
     [50.451005, 30.492981],
     [50.452990, 30.481796]
   ];
-  public maping3 = [
+  public coordPolygone = [
     [
       [50.445036, 30.485600],
       [50.441005, 30.482981],
@@ -71,12 +71,12 @@ export class AppComponent implements OnInit {
 
   ];
 
-  public info;
-  public info2;
-  public info3;
-  public info4;
-  public info5;
-  public info6;
+  public infoEllipse;
+  public infoCircle;
+  public infoMarker;
+  public infoMarker2;
+  public infoPolyline;
+  public infoPolygon;
 
   public qwerty1;
   public qwerty2;
@@ -85,25 +85,21 @@ export class AppComponent implements OnInit {
   public qwerty5;
   public qwerty6;
 
-  public group1;
-  public group2;
-  public group3;
-  public group4;
-  public group5;
-  public group6;
+  public groupEllipse;
+  public groupCircle;
+  public groupMarker;
+  public groupMarker2;
+  public groupPolyline;
+  public groupPolygon;
 
-  public latit = [];
+  public latLon = [];
 
-  public rtis = [];
-  public rtis2 = [];
-  public rtis3 = [];
-  public rtis4 = [];
-  public rtis5 = [];
-  public rtis6 = [];
-
-  public marks = [];
-
-  public mapEvent;
+  public arrayEllipse = [];
+  public arrayCircle = [];
+  public arrayMarker = [];
+  public arrayMarker2 = [];
+  public arrayLine = [];
+  public arrayPolygone = [];
 
   ngOnInit() {
     this.map = L.map('map', {
@@ -133,8 +129,8 @@ export class AppComponent implements OnInit {
     this.map.on('lasso.finished', event => {
       this.setSelectedLayers(event.layers);
       for (let i = 0; i < event.layers.length; i++) {
-        const fghj = event.layers[i];
-        this.latit.push(Object.values(fghj._latlng));
+        const arrayLayers = event.layers[i];
+        this.latLon.push(Object.values(arrayLayers._latlng));
       }
     });
 
@@ -142,7 +138,7 @@ export class AppComponent implements OnInit {
   }
 
   setSelectedLayers(layers) {
-    this.latit = [];
+    this.latLon = [];
     this.resetSelectedState();
 
     layers.forEach(layer => {
@@ -150,7 +146,6 @@ export class AppComponent implements OnInit {
         layer.setIcon(new L.Icon.Default({ className: 'selected '}));
       } else if (layer instanceof L.Path) {
         layer.setStyle({ color: '#ff4620' });
-        layer.getAll();
       }
     });
   }
@@ -166,67 +161,67 @@ export class AppComponent implements OnInit {
   }
 
   addLine() {
-    if (this.findLine === false) {
-      for (let i = 0; i < this.maping3.length; i++) {
-        this.info5 = this.maping3[i];
-        this.group5 = L.featureGroup();
-        this.qwerty5 = L.polyline(this.info5, {
+    if (this.checkLine === false) {
+      for (let i = 0; i < this.coordPolygone.length; i++) {
+        this.infoPolyline = this.coordPolygone[i];
+        this.groupPolyline = L.featureGroup();
+        this.qwerty5 = L.polyline(this.infoPolyline, {
           color: '#FF0000',
           weight: 5,
           opacity: 0.6
         })
           .bindPopup('Line works')
-          .addTo(this.group5);
-        this.map.addLayer(this.group5);
-        this.rtis5.push(this.qwerty5);
+          .addTo(this.groupPolyline);
+        this.map.addLayer(this.groupPolyline);
+        this.arrayLine.push(this.qwerty5);
       }
     }
-    if (this.findLine === true) {
-      for (let i = 0; i < this.rtis5.length; i++) {
-        this.info5 = this.rtis5[i];
-        this.map.removeLayer(this.rtis5[i]);
+    if (this.checkLine === true) {
+      for (let i = 0; i < this.arrayLine.length; i++) {
+        this.infoPolyline = this.arrayLine[i];
+        this.map.removeLayer(this.arrayLine[i]);
       }
-      this.rtis5 = [];
+      this.arrayLine = [];
     }
   }
 
   addPolygone() {
-    if (this.findPolygone === false) {
-      for (let i = 0; i < this.maping3.length; i++) {
-        this.info6 = this.maping3[i];
-        this.group6 = L.featureGroup();
-        this.qwerty6 = L.polygon(this.info6,
+    if (this.checkPolygone === false) {
+      for (let i = 0; i < this.coordPolygone.length; i++) {
+        this.infoPolygon = this.coordPolygone[i];
+        this.groupPolygon = L.featureGroup();
+        this.qwerty6 = L.polygon(this.infoPolygon,
           {
             color: '#0c7ff8',
             weight: 5,
             opacity: 0.6
           })
-          .addTo(this.group6);
-        this.map.addLayer(this.group6);
-        this.rtis6.push(this.qwerty6);
+          .addTo(this.groupPolygon);
+        this.map.addLayer(this.groupPolygon);
+        this.arrayPolygone.push(this.qwerty6);
       }
     }
-    if (this.findPolygone === true) {
-      for (let i = 0; i < this.rtis6.length; i++) {
-        this.info6 = this.rtis6[i];
-        this.map.removeLayer(this.rtis6[i]);
+    if (this.checkPolygone === true) {
+      for (let i = 0; i < this.arrayPolygone.length; i++) {
+        this.infoPolygon = this.arrayPolygone[i];
+        this.map.removeLayer(this.arrayPolygone[i]);
       }
-      this.rtis6 = [];
+      this.arrayPolygone = [];
     }
   }
 
-  findEllipse() {
-    if (this.findMap === false) {
+  addEllipse() {
+    if (this.checkEllipse === false) {
 
-      for (let i = 0; i < this.maping.length; i++) {
-        this.info = this.maping[i];
-        this.group1 = L.featureGroup();
+      for (let i = 0; i < this.coordEllipse.length; i++) {
+        this.infoEllipse = this.coordEllipse[i];
+        this.groupEllipse = L.featureGroup();
         // координаты
         // радиус по x,y
         // угол наклона
         // опции
         this.qwerty1 = L.ellipse(
-          this.info,
+          this.infoEllipse,
           [300, 100],
           180,
           {
@@ -234,54 +229,54 @@ export class AppComponent implements OnInit {
             fillColor: 'red',
             fillOpacity: 0.15
           })
-          .addTo(this.group1);
-        this.map.addLayer(this.group1);
+          .addTo(this.groupEllipse);
+        this.map.addLayer(this.groupEllipse);
 
-        this.rtis.push(this.qwerty1)
+        this.arrayEllipse.push(this.qwerty1)
       }
     }
-    if (this.findMap === true) {
-      for (let i = 0; i < this.rtis.length; i++) {
-        this.info2 = this.rtis[i];
-        this.map.removeLayer(this.rtis[i]);
+    if (this.checkEllipse === true) {
+      for (let i = 0; i < this.arrayEllipse.length; i++) {
+        this.infoEllipse = this.arrayEllipse[i];
+        this.map.removeLayer(this.arrayEllipse[i]);
       }
-      this.rtis = [];
+      this.arrayEllipse = [];
     }
   }
 
-  findMaping2() {
-    if (this.findMap2 === false) {
+  addCircle() {
+    if (this.checkCircle === false) {
 
-      for (let i = 0; i < this.maping2.length; i++) {
-        this.info2 = this.maping2[i];
-        this.group2 = L.featureGroup();
-        this.qwerty2 = L.circle(this.info2, {
+      for (let i = 0; i < this.coordCircle.length; i++) {
+        this.infoCircle = this.coordCircle[i];
+        this.groupCircle = L.featureGroup();
+        this.qwerty2 = L.circle(this.infoCircle, {
           stroke: false,
           fillColor: '#0750cd',
           fillOpacity: 0.25,
           radius: 200,
           fillRule: 'Hello'
-        }).addTo(this.group2);
-        this.map.addLayer(this.group2);
+        }).addTo(this.groupCircle);
+        this.map.addLayer(this.groupCircle);
 
-        this.rtis2.push(this.qwerty2)
+        this.arrayCircle.push(this.qwerty2)
       }
     }
-    if (this.findMap2 === true) {
-      for (let i = 0; i < this.rtis2.length; i++) {
-        this.info2 = this.rtis2[i];
-        this.map.removeLayer(this.rtis2[i]);
+    if (this.checkCircle === true) {
+      for (let i = 0; i < this.arrayCircle.length; i++) {
+        this.infoCircle = this.arrayCircle[i];
+        this.map.removeLayer(this.arrayCircle[i]);
       }
-      this.rtis2 = [];
+      this.arrayCircle = [];
     }
   }
 
   addMarker() {
-    this.addMarker3('Test', this.maping, this.info3, this.rtis3, this.group3, this.qwerty3, this.findMarker)
+    this.addMarker3('Test', this.coordEllipse, this.infoMarker, this.arrayMarker, this.groupMarker, this.qwerty3, this.checkMarker)
   }
 
   addMarker2() {
-    this.addMarker3('Testing', this.maping2, this.info4, this.rtis4, this.group4, this.qwerty4, this.findMarker2)
+    this.addMarker3('Testing', this.coordCircle, this.infoMarker2, this.arrayMarker2, this.groupMarker2, this.qwerty4, this.checkMarker2)
   }
 
   addMarker3(xx, zzz, ccc, vvv, bbb, nnn, qqq) {

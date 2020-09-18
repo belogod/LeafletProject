@@ -1,18 +1,18 @@
 <div class="map" #map id="map" style="width: 100%; height: 532.2px;"></div>
-<input type="checkbox" [(ngModel)]="findMap" (click)="findEllipse()"> get Ellipse
+<input type="checkbox" [(ngModel)]="checkEllipse" (click)="addEllipse()">Ellipse
 <br>
-<input type="checkbox" [(ngModel)]="findMap2" (click)="findMaping2()"> get Map
+<input type="checkbox" [(ngModel)]="checkCircle" (click)="addCircle()">Circle
 <br>
-<input type="checkbox" [(ngModel)]="findMarker" (click)="addMarker()"> add Markers
+<input type="checkbox" [(ngModel)]="checkMarker" (click)="addMarker()">Markers
 <br>
-<input type="checkbox" [(ngModel)]="findMarker2" (click)="addMarker2()"> add Markers2
+<input type="checkbox" [(ngModel)]="checkMarker2" (click)="addMarker2()">Markers2
 <br>
-<input type="checkbox" [(ngModel)]="findLine" (click)="addLine()"> add Line
+<input type="checkbox" [(ngModel)]="checkLine" (click)="addLine()">Line
 <br>
-<input type="checkbox" [(ngModel)]="findPolygone" (click)="addPolygone()"> add Polygone
+<input type="checkbox" [(ngModel)]="checkPolygone" (click)="addPolygone()">Polygone
 <br>
 <div id="lassoResults"></div>
 
-<ng-container  *ngFor="let item of latit">
+<ng-container  *ngFor="let item of latLon">
 <h3>{{item}}</h3>
 </ng-container>
