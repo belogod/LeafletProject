@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
+import 'leaflet/dist/images/marker-shadow.png';
 import {icon, Marker} from 'leaflet';
-const iconUrl = 'assets/leaflet/marker-icon-2x.png';
-const shadowUrl = 'assets/leaflet/marker-shadow.png';
-const iconRetinaUrl = 'assets/leaflet/marker-icon-2x.png';
+const iconRetinaUrl = 'marker-icon-2x.png';
+const iconUrl = 'marker-icon.png';
+const shadowUrl = 'marker-shadow.png';
 
 const iconDefault = icon({
   iconRetinaUrl,
@@ -20,11 +20,9 @@ const iconDefault = icon({
 });
 Marker.prototype.options.icon = iconDefault;
 
-
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
-
