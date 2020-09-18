@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import 'leaflet/dist/images/marker-shadow.png';
 import {icon, Marker} from 'leaflet';
+
 const iconRetinaUrl = 'marker-icon-2x.png';
 const iconUrl = 'marker-icon.png';
 const shadowUrl = 'marker-shadow.png';
