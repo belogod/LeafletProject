@@ -21,10 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9d56591-cbe8-4477-bfc9-14411d24a7cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,15 +48,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../leaflet-lasso-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/leaflet" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Работа\Проекты\LeafletProject\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Работа\Проекты\LeafletProject\src\assets\leaflet" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Работа\Проекты\leaflet-map\src\assets\leaflet" />
       <recent name="C:\Работа\Проекты\leaflet-map\src\assets" />
@@ -105,6 +106,8 @@
       <workItem from="1600059678860" duration="301000" />
       <workItem from="1600060749700" duration="13007000" />
       <workItem from="1600322292307" duration="3683000" />
+      <workItem from="1600336698872" duration="19701000" />
+      <workItem from="1600408111585" duration="743000" />
     </task>
     <servers />
   </component>
@@ -121,6 +124,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="624" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600332226445">
@@ -157,10 +161,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1599722575147" />
-    <state x="478" y="11" width="579" height="801" key="find.popup" timestamp="1599490671371">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="598" y="14" width="724" height="1011" key="find.popup" timestamp="1600345422055">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="478" y="11" width="579" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599490671371" />
+    <state x="598" y="14" width="724" height="1011" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600345422055" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1599649762266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

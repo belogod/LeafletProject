@@ -122,7 +122,6 @@ export class AppComponent implements OnInit {
 
     const lasso = L.lasso(this.map, options);
 
-
     type LassoControlOptions = LassoHandlerOptions & L.ControlOptions;
 
     L.control.lasso(options).addTo(this.map);
@@ -131,43 +130,30 @@ export class AppComponent implements OnInit {
       latLngs: L.LatLng[];
       layers: L.Layer[];
     }
-
     this.map.on('lasso.finished', event => {
       this.setSelectedLayers(event.layers);
-      console.log('tttt', event.layers);
       for (let i = 0; i < event.layers.length; i++) {
         const fghj = event.layers[i];
         this.latit.push(Object.values(fghj._latlng));
-        console.log('pppppooooeee', fghj._latlng);
-        console.log('latit', this.latit);
-
       }
-      console.log('this', this);
-      // console.log('layers', event.layers.toString)
     });
-
-
 
     this.addMarker();
   }
 
   setSelectedLayers(layers) {
+    this.latit = [];
     this.resetSelectedState();
 
     layers.forEach(layer => {
       if (layer instanceof L.Marker) {
         layer.setIcon(new L.Icon.Default({ className: 'selected '}));
-        // console.log(layer);
-        // console.log('latlng', L.lasso);
       } else if (layer instanceof L.Path) {
         layer.setStyle({ color: '#ff4620' });
         layer.getAll();
-
-
       }
     });
   }
-
 
   resetSelectedState() {
     this.map.eachLayer(layer => {
@@ -177,25 +163,7 @@ export class AppComponent implements OnInit {
         layer.setStyle({ color: '#3388ff' });
       }
     });
-
-    // lassoResult.innerHTML = '';
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   addLine() {
     if (this.findLine === false) {

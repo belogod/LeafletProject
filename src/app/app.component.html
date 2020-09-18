@@ -13,6 +13,6 @@
 <br>
 <div id="lassoResults"></div>
 
-<input type="text" [(ngModel)]="latit">
-<!--<input type="text" [(ngModel)]="longit">-->
-<h1>{{latit}}</h1>
+<ng-container  *ngFor="let item of latit">
+<h3>{{item}}</h3>
+</ng-container>
