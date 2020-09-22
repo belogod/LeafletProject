@@ -23,7 +23,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +70,7 @@
       <recent name="D:\WebStorm\angular-leaflet-example-lngjxe\src\assets\leaflet" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.prepublishOnly">
     <configuration name="Tests (demo)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/src/karma.conf.js" />
       <working-directory value="$PROJECT_DIR$" />
@@ -89,6 +91,54 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/node_modules/leaflet-lasso/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/node_modules/leaflet-lasso/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepublishOnly" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/node_modules/leaflet-lasso/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prepublishOnly" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/node_modules/leaflet-lasso/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.prepublishOnly" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -110,6 +160,12 @@
       <workItem from="1600322292307" duration="3683000" />
       <workItem from="1600336698872" duration="19701000" />
       <workItem from="1600408111585" duration="7485000" />
+      <workItem from="1600426616198" duration="3643000" />
+      <workItem from="1600431222756" duration="7935000" />
+      <workItem from="1600669821071" duration="2566000" />
+      <workItem from="1600698354413" duration="1974000" />
+      <workItem from="1600700339691" duration="5553000" />
+      <workItem from="1600754282860" duration="20013000" />
     </task>
     <servers />
   </component>
@@ -134,43 +190,75 @@
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599488532446" />
     <state x="624" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600332226445" />
-    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600413765556">
+    <state x="1054" y="116" width="755" height="831" key="DiffContextDialog" timestamp="1600777692874">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1054" y="116" width="755" height="831" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600777692874" />
+    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600754300715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599486825589" />
-    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600413765556" />
-    <state width="936" height="280" key="GridCell.Tab.0.bottom" timestamp="1600414583369">
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600754300715" />
+    <state width="934" height="274" key="GridCell.Tab.0.bottom" timestamp="1600705999309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599460489094" />
-    <state width="936" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600414583369" />
-    <state width="936" height="280" key="GridCell.Tab.0.center" timestamp="1600414583369">
+    <state width="934" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600705999309" />
+    <state width="934" height="274" key="GridCell.Tab.0.center" timestamp="1600705999309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599460489094" />
-    <state width="936" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600414583369" />
-    <state width="936" height="280" key="GridCell.Tab.0.left" timestamp="1600414583368">
+    <state width="934" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600705999309" />
+    <state width="934" height="274" key="GridCell.Tab.0.left" timestamp="1600705999309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599460489093" />
-    <state width="936" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600414583368" />
-    <state width="936" height="280" key="GridCell.Tab.0.right" timestamp="1600414583369">
+    <state width="934" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600705999309" />
+    <state width="934" height="274" key="GridCell.Tab.0.right" timestamp="1600705999309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599460489094" />
-    <state width="936" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600414583369" />
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1599722575147">
+    <state width="934" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600705999309" />
+    <state x="1279" y="445" key="VCS.ChangelistChooser" timestamp="1600777418364">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1599722575147" />
-    <state x="598" y="14" width="724" height="1011" key="find.popup" timestamp="1600345422055">
+    <state x="1279" y="445" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600777418364" />
+    <state x="-7" y="0" width="974" height="1047" key="dock-window-1" timestamp="1600702876315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-7" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1600702876315" />
+    <state x="348" y="-17" width="724" height="1011" key="find.popup" timestamp="1600767075242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="478" y="11" width="579" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599490671371" />
-    <state x="598" y="14" width="724" height="1011" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600345422055" />
+    <state x="348" y="-17" width="724" height="1011" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600767075242" />
     <state x="616" y="242" key="run.anything.popup" timestamp="1599649762266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599649762266" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/app.component.ts</url>
+          <line>129</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/app.component.ts</url>
+          <line>159</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/app.component.ts</url>
+          <line>117</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import * as L from 'leaflet';
-import 'leaflet-ellipse';
+// import 'leaflet-ellipse';
 import 'leaflet-lasso';
 
 const options: LassoHandlerOptions = {
   polygon: {
-    color: '#67e30f',
+    color: '#bf0202',
     weight: 2,
   },
   intersect: true,
 };
 
 interface LassoHandlerOptions {
-  polygon?: L.PolylineOptions,
+  polygon?: L.PolylineOptions;
   intersect?: boolean;
 }
 
@@ -105,8 +105,7 @@ export class AppComponent implements OnInit {
     this.map = L.map('map', {
       center: [50.445036, 30.485600],
       zoom: 16,
-      worldCopyJump: true,
-      watch: true
+      worldCopyJump: true
     });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -126,8 +125,10 @@ export class AppComponent implements OnInit {
       latLngs: L.LatLng[];
       layers: L.Layer[];
     }
+
     this.map.on('lasso.finished', event => {
       this.setSelectedLayers(event.layers);
+
       for (let i = 0; i < event.layers.length; i++) {
         const arrayLayers = event.layers[i];
         this.latLon.push(Object.values(arrayLayers._latlng));
@@ -137,15 +138,18 @@ export class AppComponent implements OnInit {
     this.addMarker();
   }
 
+
   setSelectedLayers(layers) {
+    // this.addMarker();
     this.latLon = [];
     this.resetSelectedState();
-
     layers.forEach(layer => {
       if (layer instanceof L.Marker) {
-        layer.setIcon(new L.Icon.Default({ className: 'selected '}));
+        layer.setIcon(new L.Icon.Default({
+          className: 'selected'
+        }));
       } else if (layer instanceof L.Path) {
-        layer.setStyle({ color: '#ff4620' });
+        layer.setStyle({color: '#ff4620'});
       }
     });
   }
@@ -153,9 +157,13 @@ export class AppComponent implements OnInit {
   resetSelectedState() {
     this.map.eachLayer(layer => {
       if (layer instanceof L.Marker) {
-        layer.setIcon(new L.Icon.Default());
+        layer.setIcon(new L.Icon.Default({
+          iconSize: [0, 0],
+          shadowSize: [0, 0]
+        }));
+        // layer.setIcon(new L.Icon.Default());
       } else if (layer instanceof L.Path) {
-        layer.setStyle({ color: '#3388ff' });
+        layer.setStyle({color: '#3388ff'});
       }
     });
   }
@@ -210,39 +218,39 @@ export class AppComponent implements OnInit {
     }
   }
 
-  addEllipse() {
-    if (this.checkEllipse === false) {
-
-      for (let i = 0; i < this.coordEllipse.length; i++) {
-        this.infoEllipse = this.coordEllipse[i];
-        this.groupEllipse = L.featureGroup();
-        // координаты
-        // радиус по x,y
-        // угол наклона
-        // опции
-        this.qwerty1 = L.ellipse(
-          this.infoEllipse,
-          [300, 100],
-          180,
-          {
-            color: 'blue',
-            fillColor: 'red',
-            fillOpacity: 0.15
-          })
-          .addTo(this.groupEllipse);
-        this.map.addLayer(this.groupEllipse);
-
-        this.arrayEllipse.push(this.qwerty1)
-      }
-    }
-    if (this.checkEllipse === true) {
-      for (let i = 0; i < this.arrayEllipse.length; i++) {
-        this.infoEllipse = this.arrayEllipse[i];
-        this.map.removeLayer(this.arrayEllipse[i]);
-      }
-      this.arrayEllipse = [];
-    }
-  }
+  // addEllipse() {
+  //   if (this.checkEllipse === false) {
+  //
+  //     for (let i = 0; i < this.coordEllipse.length; i++) {
+  //       this.infoEllipse = this.coordEllipse[i];
+  //       this.groupEllipse = L.featureGroup();
+  //       // координаты
+  //       // радиус по x,y
+  //       // угол наклона
+  //       // опции
+  //       this.qwerty1 = L.ellipse(
+  //         this.infoEllipse,
+  //         [300, 100],
+  //         180,
+  //         {
+  //           color: 'blue',
+  //           fillColor: 'red',
+  //           fillOpacity: 0.15
+  //         })
+  //         .addTo(this.groupEllipse);
+  //       this.map.addLayer(this.groupEllipse);
+  //
+  //       this.arrayEllipse.push(this.qwerty1)
+  //     }
+  //   }
+  //   if (this.checkEllipse === true) {
+  //     for (let i = 0; i < this.arrayEllipse.length; i++) {
+  //       this.infoEllipse = this.arrayEllipse[i];
+  //       this.map.removeLayer(this.arrayEllipse[i]);
+  //     }
+  //     this.arrayEllipse = [];
+  //   }
+  // }
 
   addCircle() {
     if (this.checkCircle === false) {
@@ -254,8 +262,7 @@ export class AppComponent implements OnInit {
           stroke: false,
           fillColor: '#0750cd',
           fillOpacity: 0.25,
-          radius: 200,
-          fillRule: 'Hello'
+          radius: 200
         }).addTo(this.groupCircle);
         this.map.addLayer(this.groupCircle);
 
@@ -293,7 +300,6 @@ export class AppComponent implements OnInit {
             ev.target.closePopup();
           })
           .addTo(this.map);
-
         this.map.addLayer(bbb);
         vvv.push(nnn);
       }

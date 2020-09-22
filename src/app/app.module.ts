@@ -13,11 +13,11 @@ const iconDefault = icon({
   iconRetinaUrl,
   iconUrl,
   shadowUrl,
-  iconSize: [25, 41],
+  iconSize: [0, 0],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   tooltipAnchor: [16, -28],
-  shadowSize: [41, 41],
+  shadowSize: [0, 0],
 });
 Marker.prototype.options.icon = iconDefault;
 

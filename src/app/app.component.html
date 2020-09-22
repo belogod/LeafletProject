@@ -1,18 +1,18 @@
 <div class="map" #map id="map" style="width: 100%; height: 532.2px;"></div>
-<input type="checkbox" [(ngModel)]="checkEllipse" (click)="addEllipse()">Ellipse
+<!--<input type="checkbox" [(ngModel)]="checkEllipse" (click)="addEllipse()">Ellipse-->
 <br>
 <input type="checkbox" [(ngModel)]="checkCircle" (click)="addCircle()">Circle
 <br>
-<input type="checkbox" [(ngModel)]="checkMarker" (click)="addMarker()">Markers
-<br>
+<!--<input type="checkbox" [(ngModel)]="checkMarker" (click)="addMarker()">Markers-->
+<!--<br>-->
 <input type="checkbox" [(ngModel)]="checkMarker2" (click)="addMarker2()">Markers2
 <br>
 <input type="checkbox" [(ngModel)]="checkLine" (click)="addLine()">Line
 <br>
 <input type="checkbox" [(ngModel)]="checkPolygone" (click)="addPolygone()">Polygone
 <br>
-<div id="lassoResults"></div>
+<!--<div id="lassoResults"></div>-->
 
-<ng-container  *ngFor="let item of latLon">
-<p>{{item}}</p>
+<ng-container *ngFor="let item of latLon; let i = index">
+<b>№{{i+1}} - </b>{{item}}<br>
 </ng-container>
